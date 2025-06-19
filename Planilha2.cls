@@ -112,16 +112,16 @@ Private Sub ComboBoxStatus_Change()
     ' Get the criteria from the textbox
     criteria = ComboBoxStatus.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 32 only
+            .AutoFilter Field:=32
+        Else
+            ' (Re-)apply filter on field 32
+            .AutoFilter Field:=32, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=32, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
 End Sub
 
 Private Sub ComboBoxAno_Change()
@@ -138,16 +138,16 @@ Private Sub ComboBoxAno_Change()
     ' Get the criteria from the textbox
     criteria = ComboBoxAno.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 30 only
+            .AutoFilter Field:=30
+        Else
+            ' (Re-)apply filter on field 30
+            .AutoFilter Field:=30, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=30, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
 End Sub
 
 Private Sub TextBoxProjetoGlobal_Change()
@@ -164,16 +164,16 @@ Private Sub TextBoxProjetoGlobal_Change()
     ' Get the criteria from the textbox
     criteria = TextBoxProjetoGlobal.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 6 only
+            .AutoFilter Field:=6
+        Else
+            ' (Re-)apply filter on field 6
+            .AutoFilter Field:=6, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=6, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
 End Sub
 
 Private Sub TextBoxCliente_Change()
@@ -190,16 +190,15 @@ Private Sub TextBoxCliente_Change()
     ' Get the criteria from the textbox
     criteria = TextBoxCliente.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
-
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=4, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 4 only
+            .AutoFilter Field:=4
+        Else
+            ' (Re-)apply filter on field 4
+            .AutoFilter Field:=4, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 End Sub
 
 Private Sub TextBoxPM_Change()
@@ -216,16 +215,16 @@ Private Sub TextBoxPM_Change()
     ' Get the criteria from the textbox
     criteria = TextBoxPM.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
-
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=8, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 8 only
+            .AutoFilter Field:=8
+        Else
+            ' (Re-)apply filter on field 8
+            .AutoFilter Field:=8, Criteria1:="*" & criteria & "*"
+        End If
+    End With
+    
 End Sub
 
 Private Sub TextBoxOV_Change()
@@ -242,16 +241,16 @@ Private Sub TextBoxOV_Change()
     ' Get the criteria from the textbox
     criteria = TextBoxOV.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 10 only
+            .AutoFilter Field:=10
+        Else
+            ' (Re-)apply filter on field 10
+            .AutoFilter Field:=10, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=10, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
 End Sub
 
 Private Sub TextBoxPEP_Change()
@@ -268,16 +267,15 @@ Private Sub TextBoxPEP_Change()
     ' Get the criteria from the textbox
     criteria = TextBoxPEP.Value
 
-    ' Clear existing filters
-    If tbl.AutoFilter.FilterMode = True Then
-        tbl.AutoFilter.ShowAllData
-    End If
-
-    ' Apply the filter
-    If Len(criteria) > 0 Then
-        ' Filter the table
-        tbl.Range.AutoFilter Field:=9, Criteria1:="*" & criteria & "*", Operator:=xlAnd
-    End If
+    With tbl.Range
+        If Len(criteria) = 0 Then
+            ' Remove filter on field 9 only
+            .AutoFilter Field:=9
+        Else
+            ' (Re-)apply filter on field 9
+            .AutoFilter Field:=9, Criteria1:="*" & criteria & "*"
+        End If
+    End With
 
 End Sub
 
