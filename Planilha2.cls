@@ -60,7 +60,7 @@ Private Sub ComboBoxAno_DropButtonClick()
 End Sub
 
 Private Sub ComboBoxStatus_DropButtonClick()
-    If Me.ComboBoxAno.List(1) = "" Then
+    If IsNull(Me.ComboBoxAno.List(1)) Then
         
         Me.ComboBoxStatus.Clear
         
