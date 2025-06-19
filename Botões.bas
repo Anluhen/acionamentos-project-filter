@@ -17,6 +17,7 @@ Sub LimparFiltros(Optional ShowOnMacroList As Boolean = False)
 End Sub
 
 Sub CriarCopia(Optional ShowOnMacroList As Boolean = False)
+    Dim wbDest As Workbook
     Dim wsSrc As Worksheet
     Dim wsDest As Worksheet
     Dim rngData As Range
@@ -34,9 +35,12 @@ Sub CriarCopia(Optional ShowOnMacroList As Boolean = False)
     Set rngFiltered = rngData.SpecialCells(xlCellTypeVisible)
     On Error GoTo 0
 
-    ' Cria nova planilha ao final com nome único
+    ' Nome para a planilha de destino
     shtName = "Cópia_" & Format(Now, "yyyymmdd_hhmmss")
-    Set wsDest = ThisWorkbook.Worksheets.Add(Before:=ThisWorkbook.Sheets("PROJETOS"))
+    
+    ' Cria nova pasta de trabalho e obtém sua primeira planilha
+    Set wbDest = Workbooks.Add(xlWBATWorksheet)
+    Set wsDest = wbDest.Sheets(1)
     On Error Resume Next
     wsDest.Name = shtName
     On Error GoTo 0
