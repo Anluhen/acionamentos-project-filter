@@ -60,7 +60,8 @@ Private Sub ComboBoxAno_DropButtonClick()
 End Sub
 
 Private Sub ComboBoxStatus_DropButtonClick()
-    If IsNull(Me.ComboBoxAno.List(1)) Then
+    On Error Resume Next
+    If Me.ComboBoxStatus.List(1) = "FATURADO" Then
         
         Me.ComboBoxStatus.Clear
         
