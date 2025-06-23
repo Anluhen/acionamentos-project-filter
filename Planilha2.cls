@@ -118,7 +118,7 @@ Private Sub ComboBoxStatus_Change()
             .AutoFilter Field:=32
         Else
             ' (Re-)apply filter on field 32
-            .AutoFilter Field:=32, Criteria1:="*" & criteria & "*"
+            .AutoFilter Field:=32, Criteria1:=criteria
         End If
     End With
 
@@ -144,7 +144,7 @@ Private Sub ComboBoxAno_Change()
             .AutoFilter Field:=30
         Else
             ' (Re-)apply filter on field 30
-            .AutoFilter Field:=30, Criteria1:="*" & criteria & "*"
+            .AutoFilter Field:=30, Criteria1:=criteria
         End If
     End With
 
